@@ -4,6 +4,7 @@ import ContactFooter from "../components/ContactFooter/ContactFooter";
 function Portfolio() {
   return (
     <>
+      <Navbar/>
       <PortfolioGallery />
       <ContactFooter />
     </>

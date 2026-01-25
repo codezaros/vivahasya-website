@@ -1,4 +1,115 @@
-.navbar {
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');  
+*{
+    padding: 0;
+    margin: 0;
+}
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 0rem 4rem;
   width: 100%;
-  /* add styles later */
+  background-color: #ffffff00;  
+} */
+ .navbar {
+  position: absolute;     
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+
+  padding: 0rem 4rem;
+  width: 100%;
+
+  background-color: rgba(255, 255, 255, 0);                  
+  z-index: 10;
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ed813e;
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f7883f;
+  opacity: 0.85;
+}
+
+
+.logo-container img {
+  height: 5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-left: auto;
+}
+
+.nav-links li {
+  cursor: pointer;
+  color: #c38b68;
+
+}
+
+.nav-links li:hover {
+  color: #e67f3d; /* soft gold */
+}
+
+.nav-btn{
+    border: none;
+    padding: 0.60rem 1.5rem;
+    border-radius: 0.3rem;
+    background-color: #f59152; /* soft gold */
+    color: #ffffff;
+    font-weight: bolder;
+    margin-left: 2rem;
+}
+.nav-btn {
+  background-color: #f87c2f;
+  color: #ffffff;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+   border-radius: 120px 60px 140px 80px / 180px 80px 60px 120px;
+}
+
+.nav-btn:hover {
+  transform: scale(0.9) rotate(0deg) translate(0px, 0px) skewX(0deg);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  filter: brightness(0.9);
+  background-color: #ff6b0f;
+  color: #ffffff;
 }
