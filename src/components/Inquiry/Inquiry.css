@@ -3,33 +3,29 @@
   text-align: center;
   position: relative;
   z-index: 1;
+  overflow: hidden; 
 }
 
-/* Title */
 .title {
   font-size: 22px;
   margin-bottom: 8px;
-  color: #f5f5f5; /* lighter for video */
+  color: #f5f5f5;
 }
 
 .underline {
   width: 60px;
   height: 4px;
-  background-color: #c6b59c; /* warm gold */
+  background-color: #c6b59c; 
   margin: 0 auto 40px;
   border-radius: 2px;
 }
 
-/* =========================
-   Redesigned Form Card
-   ========================= */
 
 .form-card {
   width: 340px;
   margin: auto;
   padding: 32px;
 
-  /* glass + warmth */
   background: rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -48,7 +44,6 @@
   font-weight: 600;
 }
 
-/* Inputs */
 .form-card input,
 .form-card textarea,
 .location-dropdown {
@@ -60,28 +55,25 @@
   border-radius: 8px;
 
   font-size: 14px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.918);
   color: #2a2a2a;
   outline: none;
 }
 
-/* Dropdown */
 .location-dropdown {
   cursor: pointer;
 }
 
-/* Textarea */
 .form-card textarea {
   resize: none;
   height: 72px;
 }
 
-/* Button */
 .form-card button {
   width: 100%;
   padding: 11px;
 
-  background-color: #c6b59c; /* wedding gold */
+  background-color: #c6b59c; 
   color: #2a2a2a;
 
   border: none;
@@ -99,9 +91,6 @@
   transform: translateY(-1px);
 }
 
-/* =========================
-   Background Video (UNCHANGED)
-   ========================= */
 
 .video-bg {
   position: fixed;

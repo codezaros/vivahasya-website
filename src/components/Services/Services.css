@@ -1,61 +1,82 @@
-:root {
-  --bg-color: #ffffff;
-  --card-bg: #ffffff;
-  --quote-color: #000000;
-  --text-main: #000000;
-  --card-radius: 0.6  rem; /* 10px */
+.services-container {
+  padding: 0;
+  background-color: #fdfaf6
+;
+}
+.scroll-spacer {
+  min-width: 60vw;   /* Controls how late cards enter */
 }
 
-/* =====================
-   SECTION
-===================== */
-.services-container {
-  background-color: var(--bg-color);
-  width: 100%;
-  padding: 2rem 0;
-  overflow: hidden;
+.services-header {
+  padding-left: 5rem;
+  margin-bottom: 3rem;
 }
 
 .main-title {
-  font-family: "Glegoo", serif;
-  font-weight: 400;
-  color: var(--text-main);
-  text-decoration: underline;
-  text-decoration-color: #ccc;
-  font-size: 3rem;
-  margin-bottom: 3.75rem;
-  padding-left: 5rem;
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-/* =====================
-   HORIZONTAL SCROLL (DESKTOP)
-   Appears after Hero naturally
-===================== */
+/* =========================
+   Horizontal Section Wrapper
+========================= */
+
+.horizontal-section {
+  position: relative;
+}
+
+.horizontal-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   Title
+========================= */
+
+.main-title {
+  padding-left: 5rem;
+  font-size: 2.5rem;       /* Reduced */
+  text-align: left;
+  margin-bottom: 0rem;
+}
+
+/* =========================
+   Horizontal Grid
+========================= */
+
 .services-grid {
   display: flex;
-  gap: 5.125rem; /* 50px */
-  padding: 0 2.5rem 3rem;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+  flex-wrap: nowrap;
+  gap: 10rem;               /* Reduced gap */
+  padding: 0 5rem;
+  transition: transform 0.1s linear;
+  will-change: transform;
 }
 
-.services-grid::-webkit-scrollbar {
-  display: none;
-}
+/* =========================
+   Cards
+========================= */
 
-/* =====================
-   CARD
-===================== */
 .service-card {
   flex: 0 0 auto;
-  width: 12rem; /* resized */
+  width: 17rem;            /* Smaller card width */
   background-color: var(--card-bg);
 }
 
+/* Stagger effect */
 .service-card:nth-child(even) {
-  margin-top: 7.75rem; /* stagger */
+  margin-top: 15rem;        /* Reduced from 124px */
 }
+
+/* =========================
+   Image
+========================= */
 
 .service-image-wrapper {
   aspect-ratio: 286 / 337;
@@ -63,120 +84,58 @@
 
 .service-image {
   width: 100%;
-  height: 100%;
-  background-color: #d9d9d9;
-  border-radius: var(--card-radius);
-  transition: transform 0.3s ease;
+  height: 18rem;           /* Reduced height */
+  background: #ddd;
+  border-radius: 1rem;
 }
 
-.service-card:hover .service-image {
-  transform: scale(1.03);
-}
+/* =========================
+   Text
+========================= */
 
-/* =====================
-   TEXT
-===================== */
 .card-title {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;       /* Reduced */
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: flex-start;
-}
-
-.quote-mark {
-  font-size: 1.2em;
-  margin-right: 0.3rem;
+  margin-bottom: 1rem;
 }
 
 .card-desc {
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  color: #333;
+  font-size: 1rem;         /* Reduced */
 }
 
-/* =====================
-   BUTTON
-===================== */
+/* =========================
+   Button
+========================= */
+
 .service-btn {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
+  margin-top: 2.5rem;
 }
 
-.btn {
-  background-color: #c2c2c2;
-  color: #000;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 0.3rem;
-  cursor: pointer;
-}
+/* =========================
+   Mobile Layout
+========================= */
 
-/* =====================
-   MOBILE STACK (UNCHANGED LOGIC)
-===================== */
-@media (max-width: 64rem) {
-  .main-title {
-    text-align: center;
-    padding-left: 0;
-    font-size: 2.5rem;
+@media (max-width: 1023px) {
+
+  .horizontal-sticky {
+    position: relative;
+    height: auto;
   }
 
   .services-grid {
     flex-direction: column;
-    padding: 1.25rem;
+    padding: 2rem;
+    gap: 2rem;
+    transform: none !important;
   }
 
-  .service-card {
-    width: 45%;
-  }
-
-  .service-card:nth-child(odd) {
-    align-self: flex-start;
-  }
-
-  .service-card:nth-child(even) {
-    align-self: flex-end;
-    margin-top: -6rem;
-  }
-}
-
-@media (max-width: 23.5rem) {
   .service-card {
     width: 100%;
     margin-top: 0 !important;
-    align-self: center;
   }
 
-  .card-title {
-    justify-content: center;
-  }
-
-  .service-text {
-    text-align: center;
-  }
-}
-
-/* =====================
-   SWIRL ARROW
-===================== */
-.css-swirl-arrow {
-  width: 6rem;
-  height: 6rem;
-  position: absolute;
-  right: 110%;
-  bottom: -0.6rem;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10 C 10 30, 10 50, 40 50 C 60 50, 60 30, 40 30 C 20 30, 20 70, 50 80 C 70 85, 90 85, 90 85' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M75 75 L 90 85 L 75 95' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-@media (max-width: 64rem) {
-  .css-swirl-arrow {
-    display: none;
+  .main-title {
+    padding-left: 2rem;
+    font-size: 2rem;
   }
 }

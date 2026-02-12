@@ -12,23 +12,23 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2700); // 1.5s closed + 1.2s gate open
+    }, 2700);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      {loading && <Loader />}
+
+      <BrowserRouter>
+        <Navbar introReady={!loading} />
+        <Routes>
+          <Route path="/" element={<Home introReady={!loading} />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 .wrapper {
    padding-bottom: 2rem;
    background-color: white;
+   overflow: hidden; 
 }
 
 .footer {

@@ -6,7 +6,6 @@
   background-color: #fffaf6;
 }
 
-/* Gates */
 .gate {
   position: absolute;
   top: 0;
@@ -28,7 +27,7 @@
   animation-delay: 1.5s;
 }
 
-/* Center logo */
+
 .gate-center {
   position: absolute;
   inset: 0;
@@ -53,7 +52,6 @@
   color: #c38b68;
 }
 
-/* Animations */
 @keyframes openLeft {
   to {
     transform: translateX(-100%);

@@ -3,7 +3,6 @@ import "./Inquiry.css";
 function Inquiry() {
   return (
     <section className="inquiry-wrapper">
-      {/* Background Video */}
       <video
         className="video-bg"
         autoPlay
@@ -14,7 +13,6 @@ function Inquiry() {
         <source src="/baos.mp4" type="video/mp4" />
       </video>
 
-      {/* Content */}
       <div className="inquiry-section">
         <h2 className="title">Let’s Plan Your Celebration</h2>
         <div className="underline"></div>
