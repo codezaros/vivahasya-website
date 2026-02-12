@@ -23,7 +23,7 @@
   min-height: 100vh;
   padding-top: 3rem;
 
-  background-image: url("/ivorg.jpeg");
+  background-color: #fad2b7;
   background-size: cover;
   background-position: center;
   display: flex;

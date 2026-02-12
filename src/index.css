@@ -4,15 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body {
+  height: auto;
+}
 /* Base body styles */
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   background-color: #ffffff;
   color: #000000;
 }
-
 /* Links */
 a {
   text-decoration: none;

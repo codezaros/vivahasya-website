@@ -1,10 +1,29 @@
 .services-container {
   padding: 0;
-  background-color: #fdfaf6
-;
+  background: linear-gradient(to bottom, #fdfdfd 0%, #fad2b7 60%);
 }
+
 .scroll-spacer {
-  min-width: 60vw;   /* Controls how late cards enter */
+  min-width: 50vw;
+  display: flex;
+  align-items: center;
+}
+
+.services-intro {
+  max-width: 400px;
+}
+
+.services-intro h1 {
+  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+  margin-left: 12rem;
+}
+
+.services-intro p {
+  font-size: 1rem;
+  margin-left: 12rem;
+  color: #555;
 }
 
 .services-header {
@@ -17,10 +36,7 @@
   margin: 0;
 }
 
-/* =========================
-   Horizontal Section Wrapper
-========================= */
-
+/* ========================= Horizontal Section Wrapper ========================= */
 .horizontal-section {
   position: relative;
 }
@@ -35,88 +51,88 @@
   justify-content: center;
 }
 
-/* =========================
-   Title
-========================= */
-
+/* ========================= Title ========================= */
 .main-title {
   padding-left: 5rem;
-  font-size: 2.5rem;       /* Reduced */
+  font-size: 2.5rem;
+  /* Reduced */
   text-align: left;
   margin-bottom: 0rem;
 }
 
-/* =========================
-   Horizontal Grid
-========================= */
-
+/* ========================= Horizontal Grid ========================= */
 .services-grid {
   display: flex;
   flex-wrap: nowrap;
-  gap: 10rem;               /* Reduced gap */
+  gap: 10rem;
+  /* Reduced gap */
   padding: 0 5rem;
-  transition: transform 0.1s linear;
   will-change: transform;
 }
 
-/* =========================
-   Cards
-========================= */
-
+/* ========================= Cards ========================= */
 .service-card {
   flex: 0 0 auto;
-  width: 17rem;            /* Smaller card width */
+  width: 17rem;
+  /* Smaller card width */
   background-color: var(--card-bg);
+  margin-top: 5rem;
 }
 
 /* Stagger effect */
 .service-card:nth-child(even) {
-  margin-top: 15rem;        /* Reduced from 124px */
+  margin-top: 20rem;
+  /* Reduced from 124px */
 }
 
-/* =========================
-   Image
-========================= */
-
+/* ========================= Image ========================= */
 .service-image-wrapper {
   aspect-ratio: 286 / 337;
 }
 
 .service-image {
   width: 100%;
-  height: 18rem;           /* Reduced height */
-  background: #ddd;
+  height: 18rem;
   border-radius: 1rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease;
 }
 
-/* =========================
-   Text
-========================= */
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
 
+.service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+}
+
+/* ========================= Text ========================= */
 .card-title {
-  font-size: 1.6rem;       /* Reduced */
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  /* Reduced */
+  margin-top: 0rem;
+  margin-bottom: 0.3rem;
 }
 
 .card-desc {
-  font-size: 1rem;         /* Reduced */
+  font-size: 1rem;
+  /* Reduced */
 }
 
-/* =========================
-   Button
-========================= */
-
+/* ========================= Button ========================= */
 .service-btn {
   margin-top: 2.5rem;
 }
 
-/* =========================
-   Mobile Layout
-========================= */
-
+/* ========================= Mobile Layout ========================= */
 @media (max-width: 1023px) {
-
   .horizontal-sticky {
     position: relative;
     height: auto;

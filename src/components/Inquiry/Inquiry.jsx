@@ -3,15 +3,16 @@ import "./Inquiry.css";
 function Inquiry() {
   return (
     <section className="inquiry-wrapper">
-      <video
-        className="video-bg"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/baos.mp4" type="video/mp4" />
-      </video>
+
+      <div className="video-wrapper">
+        <video
+          src="/baos.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      </div>
 
       <div className="inquiry-section">
         <h2 className="title">Let’s Plan Your Celebration</h2>
@@ -37,6 +38,7 @@ function Inquiry() {
           </form>
         </div>
       </div>
+
     </section>
   );
 }

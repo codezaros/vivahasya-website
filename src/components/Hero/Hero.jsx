@@ -1,40 +1,18 @@
 import { motion } from "framer-motion";
 import "./Hero.css";
 
-function Hero({ introReady }) {
+function Hero() {
   return (
     <section className="hero">
-      <video
-        className="hero-video"
-        src=""
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-
-      <div className="hero-overlay"></div>
-
-      <motion.h1
-        className="hero-line"
-        initial={{
-          scale: 4,
-          opacity: 0
-        }}
-        animate={{
-          scale: 1,
-          opacity: 1
-        }}
-
-        transition={{
-          delay: 3,
-          duration: 1.5,
-          ease: [0.22, 1, 0.36, 1]
-        }}
-      >
-        Crafting stories worth remembering
-      </motion.h1>
-
+      <div className="hero-content">
+        <div className="heading">
+          <h1>We manage the details. <span className="h1-c">You live the moment.</span></h1>
+        </div>
+        <div className="support-para">
+          <p>We handle every element with precision so your wedding feels effortless and unforgettable.</p>
+          <button className="inquiry-btn">Plan With Experts</button>
+        </div>
+      </div>
     </section>
   );
 }

@@ -92,12 +92,54 @@
 }
 
 
-.video-bg {
+/* .video-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  z-index: -1;
+} */
+
+.video-wrapper {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: -1;
+}
+
+.video-wrapper video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.inquiry-wrapper {
+  position: relative;
+}
+
+.video-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Optional dark overlay for readability */
+.inquiry-wrapper::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
   z-index: -1;
+}
+
+.inquiry-section {
+  padding: 150px 110px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
