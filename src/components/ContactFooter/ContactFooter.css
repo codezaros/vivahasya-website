@@ -1,11 +1,11 @@
 .wrapper {
    padding-bottom: 2rem;
-   background-color: white;
-   overflow: hidden; 
+   background-color: rgb(88, 68, 40);
+   overflow: hidden;   
 }
 
 .footer {
-  background-color: #c68318;
+  
   color: #fff;
 
   padding: 1.25rem;
@@ -22,7 +22,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.25rem;                     /* 20px */
+  padding: 5rem;
+  border-radius: 1rem;
+  gap: 1.25rem;   
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);                  /* 20px */
 }
 
 .footer-column {
