@@ -1,11 +1,69 @@
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import "./OurAesthetic.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
 function OurAesthetic() {
+  const sectionRef = useRef();
+
+  useGSAP(() => {
+
+    // 🔹 Reveal animation (keep this)
+    gsap.from(".story-big-img", {
+      y: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".stories-section",
+        start: "top 80%"
+      }
+    });
+
+    gsap.from(".story-card", {
+      y: 80,
+      opacity: 0,
+      stagger: 0.3,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".stories-small-grid",
+        start: "top 85%"
+      }
+    });
+
+    // 🔹 Parallax (added on top of reveal)
+    gsap.to(".story-big-img", {
+      y: -150,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".stories-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+    gsap.to(".story-img", {
+      y: -50,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".stories-section",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+      }
+    });
+
+  }, { scope: sectionRef });
+
   return (
-    <section className="stories-section">
+    <section className="stories-section" ref={sectionRef}>
       <div className="stories-container">
-        
-        {/* LEFT SIDE: Text and Small Images */}
+
         <div className="stories-left">
           <span className="stories-label">Stories We Crafted</span>
 
@@ -34,7 +92,6 @@ function OurAesthetic() {
           </div>
         </div>
 
-        {/* RIGHT SIDE: Featured Big Image */}
         <div className="stories-right">
           <div className="story-big-img"></div>
         </div>

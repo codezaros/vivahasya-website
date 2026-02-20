@@ -1,11 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Loader from "./components/Loader/Loader";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -15,26 +19,27 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2700);
-
     return () => clearTimeout(timer);
   }, []);
 
-  /* Lenis Smooth Scroll */
+  /* Lenis + GSAP Sync */
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // higher = more floaty
+      duration: 1.8,
       smooth: true,
       direction: "vertical",
       gestureDirection: "vertical",
       smoothTouch: false,
     });
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // Sync ScrollTrigger with Lenis
+    lenis.on("scroll", ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
       lenis.destroy();

@@ -5,6 +5,7 @@ import Services from "../components/Services/Services";
 import Testimonials from "../components/Testimonials/Testimonials";
 import Inquiry from "../components/Inquiry/Inquiry";
 import ContactFooter from "../components/ContactFooter/ContactFooter";
+import Faq from "../components/Faq/faq.jsx";
 
 function Home() {
   return (
@@ -21,6 +22,7 @@ function Home() {
       <Testimonials />
 
       <Inquiry />
+      <Faq />
 
       <ContactFooter />
     </>

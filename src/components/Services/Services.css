@@ -1,66 +1,163 @@
 .services-section {
-  padding: 6rem;
-  background: #fdfaf7;
+  padding: 0 5vw;
+  background: linear-gradient(to bottom, #fdd8c0 0%, #ffddc6 60%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
-/* Title */
+/* --- Added for Heading Animation --- */
+.title-word-wrapper {
+  display: inline-block;
+  overflow: hidden; /* This masks the word */
+  line-height: 1.2;
+}
+
+.title-word {
+  display: inline-block;
+  will-change: transform;
+}
+
 .section-title {
-  font-family: "Playfair Display", sans-serif;
-  font-size: 6rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 6vh;
+  letter-spacing: 2px;
 }
 
-/* Grid column-wise */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 3rem;
-  transition: all 0.8s ease;
-}
-.cards.now{
-  gap: 1rem 1rem;
+/* --- Your Existing Card Styles --- */
+.editorial-grid {
+  display: flex;
+  gap: 15px;
+  height: 60vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-/* Card styling */
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  height: 20vh;
-  border: 1px solid #e5e5e5;
-  box-shadow:
-  0px 4px 6px 0px rgba(0,0,0,0.1);
-  
+.editorial-card {
+  position: relative;
+  flex: 1;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid rgba(0,0,0,0.05);
+}
 
-  /* animation start */
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(105%);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: color 0.4s ease;
+}
+
+.editorial-card h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.editorial-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
   opacity: 0;
-  transform: translateY(60px);
-  transition: all 0.5s ease;
-}
-.card:hover{
-  background-color: rgb(255, 133, 4);
-  color: white;
-}
-.card:hover:nth-child(1){
-  background-color: rgb(255, 77, 77);
-}
-.card:hover:nth-child(5){
-  background-color: rgb(255, 77, 77);
-}
-.card:hover:nth-child(8){
-  background-color: rgb(255, 77, 77);
-}
-.card:hover:nth-child(1){
-  background-color: rgb(255, 77, 77);
-}
-.card:hover:nth-child(1){
-  background-color: rgb(255, 77, 77);
+  transform: translateY(20px);
+  transition: all 0.4s ease;
 }
 
-/* reveal animation */
-.card.show {
-  opacity: 1;
+.card-num {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card-line {
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.5s ease;
+}
+
+/* --- THE HOVER MAGIC --- */
+.editorial-card:hover {
+  flex: 1.5;
+}
+
+.editorial-card:hover .card-bg {
   transform: translateY(0);
 }
 
+.editorial-card:hover .card-content {
+  color: #fff;
+}
+
+.editorial-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.editorial-card:hover .card-line {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .editorial-grid {
+    flex-direction: column;
+    height: auto;
+  }
+  .editorial-card {
+    height: 150px;
+    flex: none;
+  }
+  .editorial-card:hover {
+    flex: none;
+    height: 250px;
+  }
+}/* --- Space Fix for Heading --- */
+.title-word-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  /* Adds a tiny gap to ensure words don't touch */
+  margin-right: 0.1em; 
+}
+
+.title-word {
+  display: inline-block;
+  will-change: transform;
+  /* ensures the &nbsp; doesn't collapse */
+  white-space: pre; 
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-align: center;
+  margin-bottom: 8vh;
+  /* Ensure the text has enough line-height for the mask */
+  line-height: 1.2; 
+  letter-spacing: normal; /* Removes tight spacing */
+}
+
+/* ... keep the rest of your card CSS as is ... */

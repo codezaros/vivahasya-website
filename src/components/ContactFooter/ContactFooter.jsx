@@ -2,42 +2,53 @@ import "./ContactFooter.css";
 
 function ContactFooter() {
   return (
-    <footer className="wrapper">
-      <div className="grid-container">
+    <footer className="footer-wrapper">
+      <div className="footer-container">
         
-        {/* Logo Section */}
-        <div className="logo-header">
-          <h1>VIVAHASYA</h1>
-          <h4>
-            ITI Employees Layout, Annapurneshwari Nagar,
-            Bengaluru, Karnataka 560091, Bangalore, India, 560091
-          </h4>
+        {/* Top Section: Branding & CTA */}
+        <div className="footer-main">
+          <div className="footer-brand">
+            <h1 className="footer-logo">VIVAHASYA.</h1>
+            <p className="footer-tagline">Crafting eternal memories with artistic precision.</p>
+          </div>
+          
+          <div className="footer-cta">
+            <p className="cta-text">Have a celebration in mind?</p>
+            <button className="cta-button">
+              Get in Touch
+              <span className="arrow">→</span>
+            </button>
+          </div>
         </div>
 
-        {/* Reach Button */}
-        <div className="reach">
-          <button>Reach Us</button>
+        {/* Middle Section: Links & Info */}
+        <div className="footer-details">
+          <div className="detail-col">
+            <h5>Office</h5>
+            <p>ITI Employees Layout, Annapurneshwari Nagar,</p>
+            <p>Bengaluru, Karnataka 560091</p>
+          </div>
+          
+          <div className="detail-col">
+            <h5>Contact</h5>
+            <p>daretolapafwrd@gmail.com</p>
+            <p>+91 1203495093</p>
+          </div>
+
+          <div className="detail-col">
+            <h5>Socials</h5>
+            <a href="#instagram">Instagram</a>
+            <a href="#facebook">Facebook</a>
+          </div>
         </div>
 
-        {/* Contact Info */}
-        <div className="contact">
-          <p>daretolapafwrd@gmail.com</p>
-          <p>+91 1203495093</p>
-        </div>
-
-        {/* Socials */}
-        <div className="socials">
-          <p>Instagram</p>
-          <p>Facebook</p>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="copyright">
-          © 2026 Vivahasya
-        </div>
-
-        <div className="privacy">
-          Privacy Terms
+        {/* Bottom Section: Legal */}
+        <div className="footer-bottom">
+          <p>© 2026 Vivahasya. All rights reserved.</p>
+          <div className="legal-links">
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+          </div>
         </div>
 
       </div>

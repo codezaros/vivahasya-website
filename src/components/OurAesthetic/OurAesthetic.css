@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap');
+.stories-section {
+  overflow: hidden; /* required */
+}
 
+.stories-right {
+  overflow: hidden; /* important for clean parallax */
+}
+
+.story-big-img,
+.story-img {
+  will-change: transform;
+}
 .stories-section {
   padding: 6rem 6rem;
   background-color: #fdfaf7;
