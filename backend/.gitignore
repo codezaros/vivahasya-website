@@ -1,10 +1,8 @@
 # Secrets
 .env
-.env.local    <-- Add this
 
 # Dependencies
 node_modules/
-dist/         <-- Add this
 
 # Debug logs
 npm-debug.log*

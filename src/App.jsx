@@ -9,6 +9,12 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Loader from "./components/Loader/Loader";
 
+import LoginPage from './pages/LoginPage';
+
+import ProtectedRoute from './context/ProtectedRoute';
+import AdminDemo from './pages/AdminDemo';
+import ClientDemo from './pages/ClientDemo';
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -55,6 +61,24 @@ function App() {
         <Routes>
           <Route path="/" element={<Home introReady={!loading} />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute adminOnly={true}>
+                <AdminDemo />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/client-home"
+            element={
+              <ProtectedRoute>
+                <ClientDemo />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
